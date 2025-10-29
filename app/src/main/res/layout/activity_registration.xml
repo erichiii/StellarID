@@ -42,8 +42,8 @@
 
     <View
         android:id="@+id/formBackground"
-        android:layout_width="349dp"
-        android:layout_height="443dp"
+        android:layout_width="354dp"
+        android:layout_height="455dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
@@ -60,31 +60,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="270dp" />
+        app:layout_constraintGuide_end="621dp" />
 
     <EditText
-        android:id="@+id/editTextMobile"
+        android:id="@+id/editTextGender"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:autofillHints="phone"
+        android:layout_marginTop="32dp"
+        android:autofillHints=""
         android:background="@drawable/edit_text_background"
-        android:hint="Mobile Number"
-        android:inputType="phone"
+        android:hint="Gender"
+        android:inputType="text"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorHint="#808080"
-        app:layout_constraintEnd_toEndOf="@id/editTextGender"
-        app:layout_constraintStart_toStartOf="@id/editTextGender"
-        app:layout_constraintTop_toBottomOf="@id/editTextGender" />
+        app:layout_constraintEnd_toEndOf="@id/editTextBirthday"
+        app:layout_constraintStart_toStartOf="@id/editTextBirthday"
+        app:layout_constraintTop_toBottomOf="@id/editTextBirthday" />
 
     <EditText
         android:id="@+id/editTextGivenName"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="24dp"
         android:autofillHints="name"
         android:background="@drawable/edit_text_background"
@@ -103,7 +103,7 @@
         android:id="@+id/editTextSurname"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:autofillHints="name"
         android:background="@drawable/edit_text_background"
         android:hint="Surname"
@@ -120,7 +120,7 @@
         android:id="@+id/editTextBirthday"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:autofillHints=""
         android:background="@drawable/edit_text_background"
         android:focusable="false"
@@ -135,20 +135,20 @@
         app:layout_constraintTop_toBottomOf="@id/editTextSurname" />
 
     <EditText
-        android:id="@+id/editTextGender"
+        android:id="@+id/editTextMobile"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="36dp"
-        android:autofillHints=""
+        android:layout_marginTop="32dp"
+        android:autofillHints="phone"
         android:background="@drawable/edit_text_background"
-        android:hint="Gender"
-        android:inputType="text"
+        android:hint="Mobile Number"
+        android:inputType="phone"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorHint="#808080"
-        app:layout_constraintEnd_toEndOf="@id/editTextBirthday"
-        app:layout_constraintStart_toStartOf="@id/editTextBirthday"
-        app:layout_constraintTop_toBottomOf="@id/editTextBirthday" />
+        app:layout_constraintEnd_toEndOf="@id/editTextGender"
+        app:layout_constraintStart_toStartOf="@id/editTextGender"
+        app:layout_constraintTop_toBottomOf="@id/editTextGender" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
