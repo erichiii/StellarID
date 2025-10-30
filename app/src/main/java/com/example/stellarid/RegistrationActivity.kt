@@ -3,6 +3,8 @@ package com.example.stellarid
 import android.os.Bundle
 import android.widget.EditText
 import android.app.DatePickerDialog
+import android.content.Intent
+import android.widget.ImageButton
 import java.util.Calendar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +23,13 @@ class RegistrationActivity : AppCompatActivity() {
         // Set a click listener on the birthday field
         editTextBirthday.setOnClickListener {
             showDatePickerDialog(editTextBirthday)
+        }
+
+        val getStartedButton = findViewById<ImageButton>(R.id.registerButton)
+
+        getStartedButton.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 
