@@ -26,7 +26,6 @@ class HomeActivity : AppCompatActivity() {
         val birthdateValue = findViewById<TextView>(R.id.birthdateValue)
         val ageValue = findViewById<TextView>(R.id.ageValue)
         val genderValue = findViewById<TextView>(R.id.genderValue)
-        val zodiacValue = findViewById<TextView>(R.id.zodiacValue)
         val numberValue = findViewById<TextView>(R.id.numberValue)
         val telecomValue = findViewById<TextView>(R.id.telecomValue)
         val infoContainer = findViewById<FrameLayout>(R.id.infoContainer)
@@ -43,14 +42,12 @@ class HomeActivity : AppCompatActivity() {
             val age = calculateAge(birthday)
             ageValue.text = age.toString()
             val zodiacSign = getZodiacSign(birthday)
-            zodiacValue.text = zodiacSign
 
             val backgroundResource = getZodiacBackground(zodiacSign)
             infoContainer.setBackgroundResource(backgroundResource)
         } else {
             birthdateValue.text = "Invalid Date"
             ageValue.text = ""
-            zodiacValue.text = ""
         }
 
         if (gender != null) {
