@@ -60,6 +60,9 @@ class RegistrationActivity : AppCompatActivity() {
             if (mobile.isEmpty()) {
                 mobileEditText.error = "Field can't be empty."
                 hasError = true
+            } else if (!mobile.matches(Regex("^\\d{11}$"))) {
+                mobileEditText.error = "Mobile number must be 11 digits."
+                hasError = true
             }
             if (gender.isEmpty()) {
                 Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show()
