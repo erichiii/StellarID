@@ -57,23 +57,6 @@
         app:layout_constraintVertical_bias="0.079" />
 
     <EditText
-        android:id="@+id/editTextGender"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:autofillHints=""
-        android:background="@drawable/edit_text_background"
-        android:hint="Gender"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="@color/white"
-        android:textColorHint="#808080"
-        app:layout_constraintEnd_toEndOf="@id/editTextBirthday"
-        app:layout_constraintStart_toStartOf="@id/editTextBirthday"
-        app:layout_constraintTop_toBottomOf="@id/editTextBirthday" />
-
-    <EditText
         android:id="@+id/editTextSurname"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -121,9 +104,71 @@
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorHint="#808080"
-        app:layout_constraintEnd_toEndOf="@id/editTextGender"
-        app:layout_constraintStart_toStartOf="@id/editTextGender"
-        app:layout_constraintTop_toBottomOf="@id/editTextGender" />
+        app:layout_constraintEnd_toEndOf="@id/editTextBirthday"
+        app:layout_constraintStart_toStartOf="@id/editTextBirthday"
+        app:layout_constraintTop_toBottomOf="@id/editTextBirthday" />
+
+    <LinearLayout
+        android:id="@+id/genderLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/edit_text_background"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="@id/editTextMobile"
+        app:layout_constraintStart_toStartOf="@id/editTextMobile"
+        app:layout_constraintTop_toBottomOf="@id/editTextMobile">
+
+        <RadioGroup
+            android:id="@+id/genderRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/femaleRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/gender_radio_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Female"
+                android:textAlignment="center"
+                android:textColor="@color/gender_text_color_selector" />
+
+            <RadioButton
+                android:id="@+id/maleRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/gender_radio_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Male"
+                android:textAlignment="center"
+                android:textColor="@color/gender_text_color_selector" />
+
+            <RadioButton
+                android:id="@+id/preferNotToSayRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/gender_radio_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Others"
+                android:textAlignment="center"
+                android:textColor="@color/gender_text_color_selector" />
+        </RadioGroup>
+    </LinearLayout>
 
     <EditText
         android:id="@+id/editTextGivenName"
@@ -149,29 +194,28 @@
         android:id="@+id/registerButton"
         android:layout_width="363dp"
         android:layout_height="93dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/plain_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextMobile" />
+        app:layout_constraintTop_toBottomOf="@id/genderLayout" />
 
     <TextView
         android:id="@+id/registerButtonText"
         android:layout_width="227dp"
         android:layout_height="93dp"
-        android:layout_marginTop="688dp"
         android:fontFamily="@font/title"
+        android:gravity="center"
         android:text="@string/register"
-        android:textAlignment="center"
         android:textColor="@color/gold"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintBottom_toBottomOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="@+id/registerButton"
+        app:layout_constraintStart_toStartOf="@+id/registerButton"
+        app:layout_constraintTop_toTopOf="@+id/registerButton" />
 
     <TextView
         android:id="@+id/student"

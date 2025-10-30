@@ -5,6 +5,9 @@ import android.widget.EditText
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.widget.ImageButton
+import android.widget.RadioGroup
+import android.widget.RadioButton
+import android.widget.Toast
 import java.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 
@@ -27,13 +30,19 @@ class RegistrationActivity : AppCompatActivity() {
             val surnameEditText = findViewById<EditText>(R.id.editTextSurname)
             val birthdayEditText = findViewById<EditText>(R.id.editTextBirthday)
             val mobileEditText = findViewById<EditText>(R.id.editTextMobile)
-            val genderEditText = findViewById<EditText>(R.id.editTextGender)
+            val genderRadioGroup = findViewById<RadioGroup>(R.id.genderRadioGroup)
 
             val givenName = givenNameEditText.text.toString()
             val surname = surnameEditText.text.toString()
             val birthday = birthdayEditText.text.toString()
             val mobile = mobileEditText.text.toString()
-            val gender = genderEditText.text.toString()
+
+            val selectedGenderId = genderRadioGroup.checkedRadioButtonId
+            val gender = if (selectedGenderId != -1) {
+                findViewById<RadioButton>(selectedGenderId).text.toString()
+            } else {
+                ""
+            }
 
             var hasError = false
             if (givenName.isEmpty()) {
@@ -53,7 +62,7 @@ class RegistrationActivity : AppCompatActivity() {
                 hasError = true
             }
             if (gender.isEmpty()) {
-                genderEditText.error = "Field can't be empty."
+                Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show()
                 hasError = true
             }
 
