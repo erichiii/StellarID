@@ -9,26 +9,10 @@
     tools:context=".RegistrationActivity">
 
     <TextView
-        android:id="@+id/register"
-        android:layout_width="227dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="156dp"
-        android:fontFamily="@font/title"
-        android:text="@string/register"
-        android:textAlignment="center"
-        android:textColor="@color/lavender"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <TextView
         android:id="@+id/title"
         android:layout_width="131dp"
         android:layout_height="63dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/title2"
         android:text="@string/app_name"
         android:textAlignment="center"
@@ -40,10 +24,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="93dp"
+        android:layout_marginTop="124dp"
+        android:fontFamily="@font/title"
+        android:text="@string/input_details"
+        android:textAlignment="center"
+        android:textColor="@color/lavender"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
     <View
         android:id="@+id/formBackground"
-        android:layout_width="354dp"
-        android:layout_height="455dp"
+        android:layout_width="360dp"
+        android:layout_height="597dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
@@ -53,14 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.077" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="621dp" />
+        app:layout_constraintVertical_bias="0.079" />
 
     <EditText
         android:id="@+id/editTextGender"
@@ -78,26 +72,6 @@
         app:layout_constraintEnd_toEndOf="@id/editTextBirthday"
         app:layout_constraintStart_toStartOf="@id/editTextBirthday"
         app:layout_constraintTop_toBottomOf="@id/editTextBirthday" />
-
-    <EditText
-        android:id="@+id/editTextGivenName"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="24dp"
-        android:autofillHints="name"
-        android:background="@drawable/edit_text_background"
-        android:hint="Given Name"
-        android:inputType="textPersonName"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="@color/white"
-        android:textColorHint="#808080"
-        app:layout_constraintEnd_toEndOf="@id/formBackground"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/formBackground"
-        app:layout_constraintTop_toTopOf="@id/guideline" />
 
     <EditText
         android:id="@+id/editTextSurname"
@@ -150,5 +124,67 @@
         app:layout_constraintEnd_toEndOf="@id/editTextGender"
         app:layout_constraintStart_toStartOf="@id/editTextGender"
         app:layout_constraintTop_toBottomOf="@id/editTextGender" />
+
+    <EditText
+        android:id="@+id/editTextGivenName"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="24dp"
+        android:autofillHints="name"
+        android:background="@drawable/edit_text_background"
+        android:hint="Given Name"
+        android:inputType="textPersonName"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/white"
+        android:textColorHint="#808080"
+        app:layout_constraintEnd_toEndOf="@id/formBackground"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/formBackground"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/registerButton"
+        android:layout_width="363dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="48dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/plain_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextMobile" />
+
+    <TextView
+        android:id="@+id/registerButtonText"
+        android:layout_width="227dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="688dp"
+        android:fontFamily="@font/title"
+        android:text="@string/register"
+        android:textAlignment="center"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:fontFamily="@font/anaktoria"
+        android:text="@string/numname"
+        android:textColor="@color/lavender"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

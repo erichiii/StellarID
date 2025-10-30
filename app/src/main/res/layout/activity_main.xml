@@ -38,8 +38,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <!-- This TextView will sit on top of the ImageButton -->
-
     <ImageButton
         android:id="@+id/getStartedButton"
         android:layout_width="500dp"
