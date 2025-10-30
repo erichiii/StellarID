@@ -6,10 +6,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.widget.ImageButton
 import java.util.Calendar
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class RegistrationActivity : AppCompatActivity() {
 
@@ -17,20 +14,30 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        // Find the EditText for the birthday
         val editTextBirthday = findViewById<EditText>(R.id.editTextBirthday)
 
-        // Set a click listener on the birthday field
         editTextBirthday.setOnClickListener {
             showDatePickerDialog(editTextBirthday)
         }
 
-        val getStartedButton = findViewById<ImageButton>(R.id.registerButton)
+        val registerButton = findViewById<ImageButton>(R.id.registerButton)
 
-        getStartedButton.setOnClickListener {
+        registerButton.setOnClickListener {
+            val givenName = findViewById<EditText>(R.id.editTextGivenName).text.toString()
+            val surname = findViewById<EditText>(R.id.editTextSurname).text.toString()
+            val birthday = findViewById<EditText>(R.id.editTextBirthday).text.toString()
+            val mobile = findViewById<EditText>(R.id.editTextMobile).text.toString()
+
             val intent = Intent(this, HomeActivity::class.java)
+
+            intent.putExtra("GIVEN_NAME", givenName)
+            intent.putExtra("SURNAME", surname)
+            intent.putExtra("BIRTHDAY", birthday)
+            intent.putExtra("NUMBER", mobile)
+
             startActivity(intent)
         }
+
     }
 
     private fun showDatePickerDialog(dateField: EditText) {
@@ -39,19 +46,17 @@ class RegistrationActivity : AppCompatActivity() {
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        // Create the DatePickerDialog
         val datePickerDialog = DatePickerDialog(
             this,
             { _, selectedYear, selectedMonth, selectedDay ->
-                // The months are 0-indexed, so we add 1 for display
-                val selectedDate = "$selectedYear-${selectedMonth + 1}-$selectedDay"
+                val selectedDate = String.format("%02d/%02d/%d", selectedMonth + 1, selectedDay, selectedYear)
                 dateField.setText(selectedDate)
             },
             year,
             month,
             day
         )
-        // Show the dialog
+
         datePickerDialog.show()
     }
 }

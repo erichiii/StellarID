@@ -5,6 +5,160 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/welcomeMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/anaktoria"
+        android:text="Welcome,"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="351dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/title2"
+        android:text="Given Name Surname!"
+        android:textAlignment="center"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeMessage" />
+
+    <FrameLayout
+        android:id="@+id/infoContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName">
+
+        <ImageView
+            android:id="@+id/zodiacImage"
+            android:layout_width="match_parent"
+            android:layout_height="617dp"
+            android:scaleType="fitXY"
+            tools:src="@drawable/form_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/InfoLabel"
+                    android:text="Birthdate: " />
+
+                <TextView
+                    android:id="@+id/birthdateValue"
+                    style="@style/InfoValue"
+                    tools:text="01/01/2000" />
+            </LinearLayout>
+
+            <View
+                style="@style/Divider"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/InfoLabel"
+                    android:text="Age: " />
+
+                <TextView
+                    android:id="@+id/ageValue"
+                    style="@style/InfoValue"
+                    tools:text="24" />
+            </LinearLayout>
+
+            <View
+                style="@style/Divider"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/InfoLabel"
+                    android:text="Zodiac Sign: " />
+
+                <TextView
+                    android:id="@+id/zodiacValue"
+                    style="@style/InfoValue"
+                    tools:text="Sagittarius" />
+            </LinearLayout>
+
+            <View
+                style="@style/Divider"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/InfoLabel"
+                    android:text="Number: " />
+
+                <TextView
+                    android:id="@+id/numberValue"
+                    style="@style/InfoValue"
+                    tools:text="09123456789" />
+            </LinearLayout>
+
+            <View
+                style="@style/Divider"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/InfoLabel"
+                    android:text="Telecom: " />
+
+                <TextView
+                    android:id="@+id/telecomValue"
+                    style="@style/InfoValue"
+                    tools:text="Smart" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
