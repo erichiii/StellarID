@@ -79,6 +79,7 @@ class RegistrationActivity : AppCompatActivity() {
                 intent.putExtra("GENDER", gender)
 
                 startActivity(intent)
+                finish()
             }
         }
 

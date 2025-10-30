@@ -1,9 +1,11 @@
 package com.example.stellarid
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -58,6 +60,14 @@ class HomeActivity : AppCompatActivity() {
             numberValue.text = number
             telecomValue.text = getTelecom(number)
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val intent = Intent(this@HomeActivity, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        })
     }
 
     private fun calculateAge(birthday: String): Int {
