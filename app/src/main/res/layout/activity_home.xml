@@ -111,12 +111,12 @@
 
                 <TextView
                     style="@style/InfoLabel"
-                    android:text="Zodiac Sign: " />
+                    android:text="Gender: " />
 
                 <TextView
-                    android:id="@+id/zodiacValue"
+                    android:id="@+id/genderValue"
                     style="@style/InfoValue"
-                    tools:text="Sagittarius" />
+                    tools:text="Female" />
             </LinearLayout>
 
             <View

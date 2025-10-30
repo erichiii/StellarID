@@ -20,10 +20,12 @@ class HomeActivity : AppCompatActivity() {
         val surname = intent.getStringExtra("SURNAME")
         val birthday = intent.getStringExtra("BIRTHDAY")
         val number = intent.getStringExtra("NUMBER")
+        val gender = intent.getStringExtra("GENDER")
 
         val userNameTextView = findViewById<TextView>(R.id.userName)
         val birthdateValue = findViewById<TextView>(R.id.birthdateValue)
         val ageValue = findViewById<TextView>(R.id.ageValue)
+        val genderValue = findViewById<TextView>(R.id.genderValue)
         val zodiacValue = findViewById<TextView>(R.id.zodiacValue)
         val numberValue = findViewById<TextView>(R.id.numberValue)
         val telecomValue = findViewById<TextView>(R.id.telecomValue)
@@ -49,6 +51,10 @@ class HomeActivity : AppCompatActivity() {
             birthdateValue.text = "Invalid Date"
             ageValue.text = ""
             zodiacValue.text = ""
+        }
+
+        if (gender != null) {
+            genderValue.text = gender
         }
 
         if (number != null) {

@@ -23,19 +23,51 @@ class RegistrationActivity : AppCompatActivity() {
         val registerButton = findViewById<ImageButton>(R.id.registerButton)
 
         registerButton.setOnClickListener {
-            val givenName = findViewById<EditText>(R.id.editTextGivenName).text.toString()
-            val surname = findViewById<EditText>(R.id.editTextSurname).text.toString()
-            val birthday = findViewById<EditText>(R.id.editTextBirthday).text.toString()
-            val mobile = findViewById<EditText>(R.id.editTextMobile).text.toString()
+            val givenNameEditText = findViewById<EditText>(R.id.editTextGivenName)
+            val surnameEditText = findViewById<EditText>(R.id.editTextSurname)
+            val birthdayEditText = findViewById<EditText>(R.id.editTextBirthday)
+            val mobileEditText = findViewById<EditText>(R.id.editTextMobile)
+            val genderEditText = findViewById<EditText>(R.id.editTextGender)
 
-            val intent = Intent(this, HomeActivity::class.java)
+            val givenName = givenNameEditText.text.toString()
+            val surname = surnameEditText.text.toString()
+            val birthday = birthdayEditText.text.toString()
+            val mobile = mobileEditText.text.toString()
+            val gender = genderEditText.text.toString()
 
-            intent.putExtra("GIVEN_NAME", givenName)
-            intent.putExtra("SURNAME", surname)
-            intent.putExtra("BIRTHDAY", birthday)
-            intent.putExtra("NUMBER", mobile)
+            var hasError = false
+            if (givenName.isEmpty()) {
+                givenNameEditText.error = "Field can't be empty."
+                hasError = true
+            }
+            if (surname.isEmpty()) {
+                surnameEditText.error = "Field can't be empty."
+                hasError = true
+            }
+            if (birthday.isEmpty()) {
+                birthdayEditText.error = "Field can't be empty."
+                hasError = true
+            }
+            if (mobile.isEmpty()) {
+                mobileEditText.error = "Field can't be empty."
+                hasError = true
+            }
+            if (gender.isEmpty()) {
+                genderEditText.error = "Field can't be empty."
+                hasError = true
+            }
 
-            startActivity(intent)
+            if (!hasError) {
+                val intent = Intent(this, HomeActivity::class.java)
+
+                intent.putExtra("GIVEN_NAME", givenName)
+                intent.putExtra("SURNAME", surname)
+                intent.putExtra("BIRTHDAY", birthday)
+                intent.putExtra("NUMBER", mobile)
+                intent.putExtra("GENDER", gender)
+
+                startActivity(intent)
+            }
         }
 
     }
